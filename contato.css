@@ -1,0 +1,201 @@
+/* Estilo geral */
+* {
+    margin: 0; /* Remove margens de todos os elementos */
+    padding: 0; /* Remove o preenchimento de todos os elementos */
+    box-sizing: border-box; /* Garante que o padding e border não afetem o tamanho total do elemento */
+}
+
+html, body {
+    height: 100%; /* Garante que o conteúdo ocupe toda a altura da tela */
+}
+
+body {
+    background-color: rgb(0, 0, 0); /* Cor de fundo preta para a página */
+    font-family: 'Poppins', sans-serif; /* Fonte usada no site */
+    color: #ebebeb; /* Cor do texto branca */
+    position: relative; /* Necessário para o pseudo-elemento funcionar corretamente */
+}
+
+/* Estilo do pseudo-elemento com imagem de fundo */
+body::before {
+    content: ''; /* Cria um pseudo-elemento vazio */
+    position: absolute; /* Posiciona o pseudo-elemento de forma absoluta */
+    top: 0; /* Alinha no topo da página */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Preenche toda a largura da página */
+    height: 100%; /* Preenche toda a altura da página */
+    background: url('imagens/hibaltaa.png') no-repeat center center/cover, rgb(0, 0, 0); /* Imagem de fundo centralizada, e cor de fundo preta como fallback */
+    opacity: 0.5; /* Define a transparência da imagem de fundo */
+    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo da página */
+}
+
+/* Estilo da interface */
+.interface {
+    max-width: 1200px; /* Define a largura máxima da interface */
+    margin: 0 auto; /* Centraliza o conteúdo na página */
+}
+
+/* Estilo do cabeçalho */
+header {
+    padding: 40px 4%; /* Adiciona espaçamento ao redor do cabeçalho */
+}
+
+/* Menu moderno */
+.menu-desktop ul {
+    display: flex; /* Exibe os itens do menu em linha */
+    justify-content: center; /* Centraliza os itens do menu */
+    align-items: center; /* Alinha os itens verticalmente */
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 10px 20px; /* Espaçamento interno */
+    background: linear-gradient(90deg, rgba(24, 6, 68, 0.9), rgba(43, 12, 51, 0.9)); /* Gradiente de fundo para o menu */
+    border-radius: 12px; /* Arredonda as bordas do menu */
+    box-shadow: 0 4px 10px rgba(187, 173, 173, 0.5); /* Adiciona uma sombra ao menu para dar profundidade */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte, se necessário */
+}
+
+.menu-desktop ul li {
+    margin: 0 20px; /* Espaçamento entre os itens do menu */
+    font-size: 18px; /* Tamanho da fonte dos itens */
+    text-transform: uppercase; /* Converte o texto dos itens para maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre as letras */
+}
+
+.menu-desktop ul li a {
+    display: inline-block; /* Exibe os links como blocos em linha */
+    padding: 12px 25px; /* Espaçamento confortável para os links */
+    color: white; /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: 600; /* Fonte seminegrito */
+    border: 2px solid transparent; /* Borda invisível ao redor do link */
+    border-radius: 6px; /* Borda arredondada */
+    transition: all 0.3s ease-in-out; /* Transição suave para interações */
+}
+
+.menu-desktop ul li a:hover {
+    background-color: white; /* Fundo branco quando o mouse passa por cima */
+    color: #0c0313; /* Texto escuro */
+    border: 2px solid white; /* Borda branca */
+    transform: translateY(-3px); /* Eleva o botão para dar um efeito de destaque */
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.5); /* Sombra quando o mouse passa sobre o item */
+}
+
+/* Estilos de responsividade */
+
+/* Mobile First (Para telas pequenas) */
+@media (max-width: 768px) {
+    .menu-desktop ul {
+        flex-wrap: wrap; /* Permite que os itens do menu quebrem para a linha seguinte */
+        justify-content: center; /* Centraliza os itens do menu */
+    }
+
+    .menu-desktop ul li {
+        margin-bottom: 10px; /* Diminui o espaçamento entre os itens do menu */
+    }
+}
+
+/* Para tablets e telas médias */
+@media (max-width: 1024px) {
+    .menu-desktop ul {
+        flex-wrap: wrap; /* Permite quebra de linha para dispositivos com mais espaço */
+        justify-content: center; /* Centraliza os itens do menu */
+    }
+
+    .menu-desktop ul li {
+        margin-bottom: 10px; /* Ajusta o espaçamento entre os itens */
+    }
+}
+
+/* Seção de contato */
+.contact-section {
+    text-align: center; /* Centraliza o texto na seção */
+    padding: 50px 20px; /* Espaçamento ao redor da seção */
+}
+
+.contact-section h1 {
+    font-size: 2.5rem; /* Tamanho maior para o título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+}
+
+.contact-section p {
+    font-size: 1.2rem; /* Tamanho da fonte do parágrafo */
+    margin-bottom: 30px; /* Espaçamento abaixo do parágrafo */
+}
+
+.social-icons {
+    margin-top: 50px; /* Espaçamento acima dos ícones */
+    display: flex; /* Exibe os ícones em linha */
+    justify-content: center; /* Centraliza os ícones */
+    gap: 50px; /* Espaçamento entre os ícones */
+}
+
+.social-icons a {
+    color: #611c81; /* Cor inicial dos ícones */
+    font-size: 50px; /* Tamanho grande para os ícones */
+    transition: transform 0.3s, color 0.3s; /* Transição suave para as transformações e mudanças de cor */
+}
+
+.social-icons a:hover {
+    color: #0077b5; /* Cor azul ao passar o mouse sobre o ícone */
+    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+}
+
+/* Formulário de contato - Ajustado */
+form {
+    max-width: 600px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário na página */
+    padding: 25px; /* Adiciona preenchimento dentro do formulário */
+    background-color: #262626; /* Cor de fundo escura para o formulário */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Adiciona sombra para profundidade */
+    display: flex; /* Exibe os campos do formulário em uma coluna */
+    flex-direction: column; /* Organiza os campos de forma vertical */
+    gap: 15px; /* Espaçamento entre os campos */
+}
+
+/* Estilizando os campos de input e textarea */
+form input,
+form textarea {
+    width: 100%; /* Largura total do campo */
+    padding: 15px; /* Preenchimento confortável */
+    border: 2px solid #333; /* Borda cinza escura */
+    border-radius: 5px; /* Borda arredondada */
+    background-color: #1a1a1a; /* Cor de fundo escura */
+    color: #ebebeb; /* Cor do texto branca */
+    font-size: 1rem; /* Tamanho da fonte */
+    transition: border-color 0.3s ease-in-out; /* Transição suave para a cor da borda */
+}
+
+/* Estilo ao focar no campo */
+form input:focus,
+form textarea:focus {
+    border-color: #5d1f68; /* Cor da borda ao focar no campo */
+    outline: none; /* Remove o contorno padrão do navegador */
+}
+
+/* Estilo do botão de envio */
+form button {
+    padding: 15px; /* Preenchimento confortável no botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Borda arredondada */
+    background-color: #5d1f68; /* Cor de fundo roxa */
+    color: white; /* Cor do texto branca */
+    font-size: 1rem; /* Tamanho da fonte */
+    font-weight: bold; /* Fonte em negrito */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease; /* Transição suave para fundo e movimento */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+form button:hover {
+    background-color: #800080; /* Fundo roxo mais claro ao passar o mouse */
+    transform: translateY(-3px); /* Eleva o botão ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(93, 31, 104, 0.3); /* Sombra ao passar o mouse */
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: center; /* Centraliza o conteúdo do rodapé */
+    padding: 10px; /* Espaçamento dentro do rodapé */
+    background-color: #494949; /* Cor de fundo cinza para o rodapé */
+    color: #fff; /* Cor do texto branca */
+}

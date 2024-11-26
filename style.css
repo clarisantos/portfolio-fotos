@@ -1,0 +1,229 @@
+/* Estilo geral: Aplicado a todos os elementos */
+* {
+    margin: 0; /* Remove margens padrão de todos os elementos */
+    padding: 0; /* Remove o preenchimento padrão de todos os elementos */
+    box-sizing: border-box; /* Faz com que o padding e a borda sejam incluídos nas dimensões do elemento */
+}
+
+/* Estilo do corpo da página */
+body {
+    background-color: rgb(0, 0, 0); /* Define a cor de fundo como preta */
+    font-family: 'Poppins', sans-serif; /* Define a fonte do texto */
+    color: #ebebeb; /* Define a cor do texto como branca */
+    position: relative; /* Necessário para o pseudo-elemento funcionar */
+}
+
+/* Pseudo-elemento ::before para a imagem de fundo */
+body::before {
+    content: ''; /* Cria um pseudo-elemento vazio */
+    position: absolute; /* Define a posição absoluta para cobrir toda a tela */
+    top: 0; left: 0; /* Posiciona o pseudo-elemento no topo esquerdo */
+    width: 100%; height: 100%; /* Faz com que ocupe toda a área do body */
+    background: url('imagens/hibaltaa.png') no-repeat center center/cover; /* Imagem de fundo */
+    opacity: 0.5; /* Define a transparência da imagem de fundo */
+    z-index: -1; /* Coloca a imagem atrás do conteúdo */
+}
+
+/* Estilo da interface geral */
+.interface {
+    max-width: 1200px; /* Limita a largura máxima da interface */
+    margin: 0 auto; /* Centraliza a interface na tela */
+}
+
+/* Estilo do cabeçalho */
+header {
+    padding: 40px 4%; /* Espaçamento ao redor do cabeçalho */
+}
+
+/* Layout flexível para organizar logo e menu */
+.flex {
+    display: flex;
+    justify-content: space-between; /* Espaço entre o logo e o menu */
+    align-items: center; /* Alinha os itens verticalmente */
+}
+
+/* Configuração do cabeçalho com a interface */
+header > .interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Espaço igual entre os itens */
+}
+
+/* Estilo do menu na versão desktop */
+.menu-desktop ul {
+    display: flex;
+    justify-content: center; /* Centraliza os itens do menu */
+    align-items: center;
+    list-style: none; /* Remove os marcadores de lista */
+    padding: 10px 20px; /* Espaçamento interno do menu */
+    background: linear-gradient(90deg, rgba(24, 6, 68, 0.9), rgba(43, 12, 51, 0.9)); /* Gradiente como fundo */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(187, 173, 173, 0.5); /* Sombra para o menu */
+    flex-wrap: wrap; /* Permite que o menu se ajuste em dispositivos menores */
+}
+
+/* Estilo para cada item de lista no menu */
+.menu-desktop ul li {
+    margin: 0 20px; /* Espaço lateral entre os itens */
+    font-size: 18px; /* Tamanho da fonte */
+    text-transform: uppercase; /* Torna o texto maiúsculo */
+    letter-spacing: 1px; /* Espaçamento entre as letras */
+}
+
+/* Estilo para os links do menu */
+.menu-desktop ul li a {
+    display: inline-block;
+    padding: 12px 25px; /* Espaçamento confortável dentro do link */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: 600; /* Peso da fonte seminegrito */
+    border: 2px solid transparent; /* Borda invisível */
+    border-radius: 6px; /* Bordas arredondadas */
+    transition: all 0.3s ease-in-out; /* Transição suave nas interações */
+}
+
+/* Estilo para quando o mouse passa sobre o link (hover) */
+.menu-desktop ul li a:hover {
+    background-color: white; /* Cor de fundo branca ao passar o mouse */
+    color: #0c0313; /* Texto escuro */
+    border: 2px solid white; /* Borda branca */
+    transform: translateY(-3px); /* Eleva o item */
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.5); /* Sombra mais intensa */
+}
+
+/* Estilos de responsividade */
+
+/* Mobile First: Para dispositivos com largura de até 768px */
+@media (max-width: 768px) {
+    .menu-desktop ul {
+        flex-wrap: wrap; /* Permite quebra de linha se necessário */
+        justify-content: center; /* Centraliza os itens */
+    }
+
+    .menu-desktop ul li {
+        margin-bottom: 10px; /* Diminui o espaço entre os itens */
+    }
+}
+
+/* Para dispositivos com telas médias (tablets, até 1024px) */
+@media (max-width: 1024px) {
+    .menu-desktop ul {
+        flex-wrap: wrap; /* Permite quebra de linha */
+        justify-content: center; /* Centraliza os itens */
+    }
+
+    .menu-desktop ul li {
+        margin-bottom: 10px; /* Ajusta o espaço entre os itens */
+    }
+}
+
+/* Estilo da seção topo do site */
+.topo-do-site {
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 80px 4%; /* Espaçamento ao redor do conteúdo */
+}
+
+/* Título da seção topo do site */
+.topo-do-site h1 {
+    font-size: 50px; /* Tamanho grande do título */
+    margin: 20px auto; /* Centraliza e dá espaçamento */
+    width: 80%; /* Controla a largura do título */
+}
+
+/* Parágrafo da seção topo do site */
+.topo-do-site p {
+    font-size: 25px; /* Tamanho maior do texto */
+    margin: 20px auto; /* Centraliza e dá espaçamento */
+    width: 80%; /* Controla a largura do parágrafo */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+}
+
+/* Estilo para a seção das imagens inferiores */
+.imagens-inferiores {
+    display: flex;
+    justify-content: space-around; /* Espaço uniforme entre as imagens */
+    align-items: center;
+    padding: 40px 4%; /* Espaçamento ao redor das imagens */
+    background-color: transparent; /* Fundo transparente */
+}
+
+/* Hero Section com imagem de fundo */
+.hero {
+    background: url('imagens/galeria.png') no-repeat center center/cover; /* Define a imagem de fundo */
+    height: 70vh; /* Ajusta a altura da seção para 70% da altura da tela */
+    width: 100%; /* Largura total */
+    display: flex; /* Layout flexível */
+    align-items: center; /* Alinha o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    text-align: center; /* Centraliza o texto */
+    color: white; /* Cor do texto branca */
+    padding: 0 20px; /* Espaçamento lateral */
+}
+
+/* Estilo para o conteúdo da hero section */
+.hero-content h1 {
+    font-size: 60px; /* Tamanho do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+.hero-content p {
+    font-size: 20px; /* Tamanho do parágrafo */
+    margin-bottom: 30px; /* Espaço abaixo do parágrafo */
+}
+
+/* Estilo do botão na hero section */
+.btn-hero {
+    padding: 15px 30px;
+    background-color: white; /* Fundo branco */
+    color: black; /* Texto preto */
+    font-weight: bold; /* Texto em negrito */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 6px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+/* Efeito do botão ao passar o mouse */
+.btn-hero:hover {
+    background-color: #f2f2f2; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo da seção de destaques */
+.destaques {
+    padding: 60px 4%;
+    background-color: transparent(0, 0, 0); /* Fundo transparente */
+    color: white; /* Texto branco */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+/* Estilo para a galeria de imagens */
+.galeria {
+    display: flex;
+    justify-content: space-around; /* Espaçamento uniforme entre as imagens */
+    margin-top: 20px; /* Espaço superior */
+}
+
+/* Estilo para cada item da galeria */
+.galeria-item {
+    width: 30%; /* Largura de cada item da galeria */
+    text-align: center; /* Centraliza o texto dentro dos itens */
+}
+
+/* Imagens da galeria */
+.galeria-item img {
+    width: 100%; /* Largura total da imagem */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra nas imagens */
+}
+
+/* Estilo para o texto da galeria */
+.galeria-item p {
+    margin-top: 10px; /* Espaço acima do texto */
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #333; /* Cor de fundo escura */
+    color: white; /* Cor do texto branca */
+}

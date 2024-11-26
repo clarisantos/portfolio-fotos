@@ -1,0 +1,77 @@
+<!DOCTYPE html> <!-- Declaração do tipo de documento, especifica que é um documento HTML5 -->
+<html lang="pt-br"> <!-- Define que o idioma da página é português brasileiro -->
+<head>
+  <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8, garantindo suporte a caracteres especiais -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna o site responsivo, ajustando seu layout para diferentes tamanhos de tela -->
+  <title>Site Dinâmico</title> <!-- Título da página, que aparece na aba do navegador -->
+  
+  <!-- Importação do arquivo CSS para aplicar os estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header> <!-- Cabeçalho do site -->
+    <div class="interface">
+      <!-- Menu de navegação principal -->
+      <nav class="menu-desktop">
+        <ul>
+          <!-- Links para as seções do site -->
+          <li><a class="nav-link scrollto active" href="index.html">Início</a></li> <!-- Link para a página inicial -->
+          <li><a class="nav-link scrollto active" href="sobremim.html">Sobre mim</a></li> <!-- Link para a página "Sobre mim" -->
+          <li><a class="nav-link scrollto" href="portfolio.html">Portfólio</a></li> <!-- Link para a página "Portfólio" -->
+          <li><a class="nav-link scrollto" href="contato.html">Contato</a></li> <!-- Link para a página de "Contato" -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content"> <!-- Corpo principal do conteúdo da página -->
+    
+    <!-- Seção inicial (Topo do site) -->
+    <section id="inicio" class="topo-do-site">
+      <div class="interface">
+
+        <!-- Hero Section (Seção principal com destaque) -->
+        <section class="hero">
+          <div class="hero-content">
+            <!-- Título e descrição que capturam a essência do site -->
+            <h1>Clara Santos</h1>
+            <p>"Focado na combinação de técnica, criatividade e atenção aos detalhes. Cada imagem reflete minha busca por capturar a essência de pessoas, lugares e momentos de forma única e autêntica."</p>
+            <!-- Botão que leva ao portfólio -->
+            <a href="portfolio.html" class="btn-hero">Ver Portfólio</a>
+          </div>
+        </section>
+
+        <!-- Seção de Destaques -->
+        <section class="destaques">
+          <h2>Destaques</h2>
+          <!-- Galeria de imagens em destaque -->
+          <div class="galeria">
+            <!-- Item da galeria -->
+            <div class="galeria-item">
+              <img src="imagens/esteban.png" alt="Destaque 1"> <!-- Imagem do primeiro destaque -->
+              <p>Esteban Tavares</p> <!-- Descrição do destaque -->
+            </div>
+            <!-- Segundo item da galeria -->
+            <div class="galeria-item">
+              <img src="imagens/themaine.png" alt="Destaque 2"> <!-- Imagem do segundo destaque -->
+              <p>The Maine</p> <!-- Descrição do destaque -->
+            </div>
+            <!-- Terceiro item da galeria -->
+            <div class="galeria-item">
+              <img src="imagens/nando.png" alt="Destaque 3"> <!-- Imagem do terceiro destaque -->
+              <p>Nando Reis e Pitty</p> <!-- Descrição do destaque -->
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- Rodapé do site -->
+    <footer>
+      <p>&copy; 2024 Clara Santos - Todos os direitos reservados</p> <!-- Copyright com a data e a autoria -->
+    </footer>
+
+</body>
+</html>

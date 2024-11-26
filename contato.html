@@ -1,0 +1,88 @@
+<!DOCTYPE html> <!-- Declaração do tipo de documento, define o HTML5 -->
+<html lang="pt-br"> <!-- Define que o idioma da página é português brasileiro -->
+<head>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres para UTF-8 (suporte a caracteres especiais) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Permite a responsividade, ajustando a largura da página ao tamanho da tela do dispositivo -->
+    <title>Fale Comigo</title> <!-- Título da página que aparece na aba do navegador -->
+    
+    <!-- Importa a fonte "Poppins" do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
+    <!-- Importa o ícone de fontes do FontAwesome (usado para ícones sociais) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Importa o arquivo CSS específico para o estilo da página de contato -->
+    <link rel="stylesheet" href="contato.css">
+</head>
+<body>
+
+  <header> <!-- Cabeçalho da página -->
+    <div class="interface">
+      <!-- Menu de navegação principal do site -->
+      <nav class="menu-desktop">
+        <!-- Ícones de menu para dispositivos móveis -->
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <!-- Lista de links de navegação -->
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Início</a></li> <!-- Link para a página inicial -->
+          <li><a class="nav-link scrollto" href="sobremim.html">Sobre mim</a></li> <!-- Link para a página "Sobre mim" -->
+          <li><a class="nav-link scrollto" href="portfolio.html">Portfólio</a></li> <!-- Link para a página "Portfólio" -->
+          <li><a class="nav-link scrollto" href="contato.html">Contato</a></li> <!-- Link para a página "Contato" -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main> <!-- Corpo principal da página -->
+    <section id="contact" class="contact-section"> <!-- Seção de contato -->
+        <div class="interface">
+            <!-- Título da seção de contato -->
+            <h1>Fale Comigo</h1>
+            <!-- Descrição explicando como entrar em contato -->
+            <p>Entre em contato comigo através das redes sociais ou envie uma mensagem usando o formulário abaixo.</p>
+
+            <!-- Ícones de redes sociais com links -->
+            <div class="social-icons">
+                <!-- Link para o Instagram, abre em uma nova aba -->
+                <a href="https://www.instagram.com/aclothbrook/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <!-- Link para o GitHub, abre em uma nova aba -->
+                <a href="https://github.com/clarisantos" target="_blank"><i class="fab fa-github"></i></a>
+                <!-- Link para o LinkedIn, abre em uma nova aba -->
+                <a href="https://www.linkedin.com/in/clara-santos-b09340233/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <!-- Formulário de contato, que envia os dados para o Formspree -->
+            <form action="https://formspree.io/f/xovqnoyj" method="POST">
+              <!-- Campo para o nome, obrigatório -->
+              <input type="text" name="nome" placeholder="Seu nome" required>
+              <!-- Campo para o email, obrigatório -->
+              <input type="email" name="email" placeholder="Seu email" required>
+              <!-- Campo para a mensagem, obrigatório e com tamanho de 5 linhas -->
+              <textarea name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea>
+              <!-- Botão de envio do formulário -->
+              <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+  </main>
+
+  <footer> <!-- Rodapé da página -->
+    <p>&copy; 2024 Clara Santos - Todos os direitos reservados.</p> <!-- Texto do rodapé -->
+  </footer>
+
+  <!-- Script que adiciona funcionalidade ao menu (menu hambúrguer) -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle'); // Seleciona o botão de menu
+    const menu = document.querySelector('.menu-desktop ul'); // Seleciona a lista do menu
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('show'); // Alterna a classe "show" no menu, abrindo ou fechando o menu
+    });
+  </script>
+
+</body>
+</html>

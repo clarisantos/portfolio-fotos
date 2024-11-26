@@ -1,0 +1,255 @@
+/* Estilo geral */
+* {
+    margin: 0; /* Remove as margens de todos os elementos */
+    padding: 0; /* Remove o preenchimento de todos os elementos */
+    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos no tamanho total do elemento */
+}
+
+body {
+    background-color: rgb(0, 0, 0); /* Cor de fundo preta */
+    font-family: 'Poppins', sans-serif; /* Define a fonte do corpo como Poppins */
+    color: #ebebeb; /* Cor do texto (branco claro) */
+    position: relative; /* Permite o uso do pseudo-elemento no fundo */
+}
+
+/* Alterando o pseudo-elemento para um fundo menos opaco */
+body::before {
+    content: ''; /* Cria um pseudo-elemento vazio */
+    position: absolute; /* Posiciona o pseudo-elemento de forma absoluta */
+    top: 0; /* Alinha o pseudo-elemento ao topo */
+    left: 0; /* Alinha o pseudo-elemento à esquerda */
+    width: 100%; /* Define a largura do pseudo-elemento como 100% da tela */
+    height: 100%; /* Define a altura do pseudo-elemento como 100% da tela */
+    background: url('imagens/hibaltaa.png') no-repeat center center/cover; /* Define a imagem de fundo, centralizada e ajustada */
+    opacity: 0.3; /* Define a opacidade da imagem de fundo */
+    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo da página */
+}
+
+/* Estilo da interface */
+.interface {
+    max-width: 1200px; /* Define a largura máxima da interface */
+    margin: 0 auto; /* Centraliza a interface na tela */
+}
+
+/* Estilo do cabeçalho */
+header {
+    padding: 40px 4%; /* Espaçamento interno do cabeçalho */
+}
+
+.flex {
+    display: flex; /* Utiliza o modelo de layout flexbox */
+    justify-content: space-between; /* Cria espaçamento entre o logo e o menu */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+}
+
+header > .interface {
+    display: flex; /* Utiliza flexbox dentro da interface */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    justify-content: space-around; /* Distribui os itens com espaçamento */
+}
+
+/* Estilo da seção do texto inicial */
+.topo-do-site {
+    text-align: center; /* Centraliza o texto */
+    padding: 80px 4%; /* Adiciona espaçamento ao redor da seção */
+}
+
+/* Container para as imagens do portfólio */
+.portfolio {
+    display: flex; /* Flexbox para organizar os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os itens no container */
+    gap: 20px; /* Adiciona espaçamento entre os itens */
+    padding: 20px; /* Adiciona espaçamento ao redor do container */
+    width: 100%; /* O container ocupa toda a largura disponível */
+}
+
+/* Item de Portfólio */
+.portfolio-item {
+    position: relative; /* Permite o posicionamento de elementos dentro do item */
+    background: #35000000; /* Cor de fundo semi-transparente */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do item */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o item */
+    width: calc(25% - 20px); /* Define a largura dos itens (4 por linha) */
+}
+
+.image-gallery {
+    display: flex; /* Utiliza flexbox para a galeria de imagens */
+    flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha */
+    gap: 10px; /* Adiciona espaçamento entre as imagens */
+    width: 100%; /* O container ocupa toda a largura disponível */
+}
+
+/* Estilo das imagens */
+.image-gallery img {
+    width: 100%; /* As imagens ocupam toda a largura do container */
+    height: 200px; /* Define a altura das imagens */
+    object-fit: cover; /* Faz as imagens se ajustarem ao tamanho do container sem distorção */
+    border-radius: 10px; /* Bordas arredondadas nas imagens */
+    cursor: pointer; /* Altera o cursor ao passar sobre as imagens */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza a transição de animações */
+}
+
+/* Para telas pequenas, ajusta o número de imagens por linha */
+@media (max-width: 768px) {
+    .portfolio-item {
+        width: calc(50% - 20px); /* 2 itens por linha em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-item {
+        width: 100%; /* 1 item por linha em telas muito pequenas */
+    }
+}
+
+/* Efeito hover nas imagens */
+.image-gallery img:hover {
+    transform: scale(1.05); /* Aumenta o tamanho da imagem quando passa o mouse sobre ela */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Aumenta a sombra da imagem */
+}
+
+/* Overlay de texto sobre as imagens */
+.overlay {
+    position: absolute; /* Posiciona o texto sobre a imagem */
+    bottom: 10px; /* Alinha o texto ao fundo da imagem */
+    left: 8px; /* Alinha o texto à esquerda */
+    right: 8px; /* Alinha o texto à direita */
+    background: rgba(255, 254, 254, 0.717); /* Fundo semi-transparente */
+    padding: 10px; /* Espaçamento interno do overlay */
+    border-radius: 5px; /* Bordas arredondadas */
+    color: rgb(0, 0, 0); /* Cor do texto */
+}
+
+.overlay h2 {
+    font-size: 24px; /* Tamanho da fonte do título */
+    margin: 0; /* Remove a margem ao redor do título */
+}
+
+.overlay p {
+    font-size: 16px; /* Tamanho da fonte da descrição */
+}
+
+/* Estilos da Modal */
+.modal {
+    display: none; /* Esconde a modal por padrão */
+    position: fixed; /* Posiciona a modal fixada na tela */
+    z-index: 1000; /* Coloca a modal acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* A modal ocupa toda a largura da tela */
+    height: 100%; /* A modal ocupa toda a altura da tela */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro e semi-transparente */
+    justify-content: center; /* Centraliza o conteúdo da modal */
+    align-items: center; /* Centraliza o conteúdo da modal verticalmente */
+}
+
+.modal img {
+    max-width: 80%; /* Limita a largura máxima da imagem */
+    max-height: 80%; /* Limita a altura máxima da imagem */
+    object-fit: contain; /* Garante que a imagem se ajuste sem distorção */
+}
+
+/* Navegação dentro da modal */
+.navigation {
+    position: absolute; /* Posiciona a navegação na modal */
+    top: 50%; /* Coloca a navegação no meio verticalmente */
+    width: 100%; /* A navegação ocupa toda a largura da modal */
+    display: flex; /* Utiliza flexbox */
+    justify-content: space-between; /* Espaçamento entre os botões de navegação */
+}
+
+.prev-btn,
+.next-btn {
+    background-color: transparent; /* Fundo transparente */
+    color: white; /* Cor do ícone */
+    border: none; /* Sem borda */
+    font-size: 30px; /* Tamanho do ícone */
+    cursor: pointer; /* Altera o cursor ao passar sobre os botões */
+    transition: transform 0.3s ease; /* Suaviza o efeito de transformação */
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+}
+
+.close-btn {
+    color: white; /* Cor do ícone de fechar */
+    font-size: 36px; /* Tamanho do ícone */
+    font-weight: bold; /* Aumenta o peso da fonte */
+    position: absolute; /* Posiciona o ícone de fechar no topo direito */
+    top: 10px;
+    right: 25px;
+    cursor: pointer; /* Altera o cursor ao passar sobre o ícone */
+}
+
+.close-btn:hover {
+    color: #ccc; /* Altera a cor do ícone de fechar ao passar o mouse */
+}
+
+/* Menu moderno */
+.menu-desktop ul {
+    display: flex; /* Flexbox para os itens do menu */
+    justify-content: center; /* Centraliza os itens */
+    align-items: center; /* Alinha verticalmente */
+    list-style: none; /* Remove os pontos de lista */
+    padding: 10px 20px; /* Espaçamento interno */
+    background: linear-gradient(90deg, rgba(24, 6, 68, 0.9), rgba(43, 12, 51, 0.9)); /* Gradiente moderno no fundo */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(187, 173, 173, 0.5); /* Sombra para o menu */
+    flex-wrap: wrap; /* Permite que os itens quebrem de linha, se necessário */
+}
+
+.menu-desktop ul li {
+    margin: 0 20px; /* Espaçamento lateral entre os itens */
+    font-size: 18px; /* Tamanho da fonte dos itens */
+    text-transform: uppercase; /* Deixa os itens em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+.menu-desktop ul li a {
+    display: inline-block; /* Exibe os links como blocos inline */
+    padding: 12px 25px; /* Espaçamento confortável dentro dos links */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: 600; /* Peso da fonte seminegrito */
+    border: 2px solid transparent; /* Borda invisível para os links */
+    border-radius: 6px; /* Bordas arredondadas */
+    transition: all 0.3s ease-in-out; /* Suaviza a transição ao passar o mouse */
+}
+
+.menu-desktop ul li a:hover {
+    background-color: white; /* Fundo branco no hover */
+    color: #0c0313; /* Cor do texto no hover */
+    border: 2px solid white; /* Borda branca no hover */
+    transform: translateY(-3px); /* Eleva o link */
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.5); /* Sombra no hover */
+}
+
+/* Estilos de responsividade */
+
+/* Mobile First */
+@media (max-width: 768px) {
+    .menu-desktop ul {
+        flex-wrap: wrap; /* Permite que o menu quebre a linha se necessário */
+        justify-content: center; /* Centraliza os itens */
+    }
+
+    .menu-desktop ul li {
+        margin-bottom: 10px; /* Diminui o espaçamento entre os itens */
+    }
+}
+
+/* Para tablets e telas médias */
+@media (max-width: 1024px) {
+    .menu-desktop ul {
+        flex-wrap: wrap; /* Permite quebra de linha para dispositivos com mais espaço */
+        justify-content: center; /* Centraliza os itens */
+    }
+
+    .menu-desktop ul li {
+        margin-bottom: 10px; /* Ajusta o espaçamento entre os itens */
+    }
+}

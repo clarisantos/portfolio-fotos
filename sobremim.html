@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Definição da codificação de caracteres para UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Definição de viewport para garantir responsividade em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página que aparece na aba do navegador -->
+    <title>Sobre Mim</title>
+    <!-- Link para importar a fonte Poppins do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <!-- Link para o arquivo CSS externo, que contém os estilos da página -->
+    <link rel="stylesheet" href="sobremim.css"> <!-- Seu arquivo CSS -->
+    <!-- Link para o Font Awesome, que fornece ícones como o Instagram, LinkedIn e GitHub -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Cabeçalho da página -->
+  <header>
+      <div class="interface">
+          <!-- Menu de navegação -->
+          <nav class="menu-desktop">
+              <ul id="menu-list">
+                  <!-- Links de navegação para as diferentes páginas -->
+                  <li><a class="nav-link scrollto active" href="index.html">Início</a></li>
+                  <li><a class="nav-link scrollto active" href="sobremim.html">Sobre mim</a></li>
+                  <li><a class="nav-link scrollto" href="portfolio.html">Portfólio</a></li>
+                  <li><a class="nav-link scrollto" href="contato.html">Contato</a></li>
+              </ul>
+          </nav>
+      </div>
+  </header>
+  
+  <!-- Seção 'Sobre Mim' -->
+  <section class="sobre-mim">
+    <div class="conteudo-sobre">
+        <!-- Imagem pessoal -->
+        <img src="imagens/eulinda.png" alt="Foto de Clara Santos" class="foto-clara"> <!-- Substitua pela sua foto -->
+        <!-- Título da seção -->
+        <h1>Sobre Mim</h1>
+        <!-- Parágrafo com informações sobre Clara -->
+        <p>Olá, sou Clara, tenho 21 anos, natural de São Paulo. Desde pequena, meus pais sempre tiraram muitas fotos de mim, e com o tempo, aprendi a ver essas imagens como uma maneira de eternizar momentos especiais até que comecei a fazer o mesmo. Sou apaixonada por exatas, amante da academia, corredora e, amo a Taylor Swift. Espero que vejam com carinho este Portfólio, ele representa minha trajetória desde o início, quem eu sou, e o que me faz feliz. </p>
+        
+        <!-- Seção de redes sociais com ícones -->
+        <div class="redes-sociais">
+          <a href="https://www.instagram.com/aclothbrook/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/clara-santos-b09340233/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/clarisantos" target="_blank"><i class="fab fa-github"></i></a>
+      </div>  
+
+        <!-- Exibir texto adicional ao clicar no botão -->
+        <label for="toggle-text" class="btn-sobre">Saiba Mais</label>
+        <!-- Caixa de seleção invisível para controlar a exibição do texto -->
+        <input type="checkbox" id="toggle-text" style="display: none;">
+        <!-- Texto adicional que será exibido ao marcar a caixa -->
+        <div class="mais-info">
+            <p>Em 2024, me mudei para Fortaleza com minha mãe e meu padrasto. Foi uma mudança muito difícil, pois eu tinha uma conexão profunda com São Paulo e com tudo o que a cidade representava para mim. Tive que deixar para trás minhas raízes e recomeçar do zero.
+              Hoje, sigo uma rotina intensa de trabalho, musculação, corrida e faculdade e atualmente curso ADS. É desafiador, e às vezes o corpo dói de tanto cansaço, mas quando se tem uma família como a minha ao lado, é possível superar tudo. Com eles, sinto que sou capaz de qualquer coisa.
+            
+              Minha mãe é a mulher mais forte e incrível que eu conheço, minha melhor amiga e parceira de vida. Ela é carinhosa, atenciosa, sempre me ouve com paciência, e tem um coração imenso. Sua bondade e sabedoria são fontes de inspiração para mim todos os dias. Ela é a administradora financeira mais inteligente que existe e tem uma capacidade única de encontrar soluções para qualquer situação.
+              
+              Meu pai foi o homem mais bondoso e amoroso que já conheci, sempre sorrindo, meu melhor amigo. Apesar de ele não estar mais aqui, sinto sua presença ao meu lado todos os dias, mesmo após cinco anos.
+              
+              Eu também amo muito meu padrasto. Ele sempre me apoia, está ao meu lado, cuida de mim e da minha mãe. Sou imensamente grata por ter uma família como a minha. Quando me perguntam como consigo fazer tantas coisas e dar conta de tudo, a resposta é simples: é por causa da minha família. São eles que me dão a força que preciso e me fazem acreditar no meu potencial. Principalmente minha mãe, sei que não há ninguém no mundo que acredite mais em mim do que ela. Eu a amo mais que tudo..</p>
+        </div>
+        
+</section>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2024 Clara Santos - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Script JavaScript para o menu hamburguer -->
+    <script>
+        // Ação para abrir e fechar o menu no mobile
+        document.getElementById('hamburger').addEventListener('click', function() {
+            const menu = document.querySelector('.menu-desktop ul');
+            menu.classList.toggle('active');  // Alterna a classe 'active' para mostrar/ocultar o menu
+        });
+    </script>
+
+</body>
+</html>
